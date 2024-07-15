@@ -17,6 +17,8 @@
 <li>Communicate with you, either directly or through one of our partners, including for customer service, to provide you with updates and other information relating to DandyBot</li>
 <li>Find and prevent fraud</li>
 </ul>
+<h2>Data Retention</h2>
+<p>We automatically delete user data collected by DandyBot after 30 days.</p>
 <h2>Log Files</h2>
 <p>DandyBot follows a standard procedure of using log files. These files log visitors when they interact with the bot. The information collected by log files includes internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the bot, and gathering demographic information.</p>
 <h2>Third Party Privacy Policies</h2>
