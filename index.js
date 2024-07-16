@@ -1,7 +1,8 @@
 const fs = require('node:fs')
 const path = require('node:path')
+
 // Require the necessary discord.js classes
-const { Client, Events, GatewayIntentBits } = require('discord.js');
+const { Client, Events, GatewayIntentBits, Collection } = require('discord.js');
 const { token } = require('./config.json');
 
 // Create a new client instance
@@ -41,12 +42,12 @@ client.on(Events.InteractionCreate, async interaction => {
 	}
 
 	try {
-		await command.execute(interaction)
+		await command.execute(interaction, client)
 	}
 	catch (error) {
 		console.error(error);
 		if (interaction.replied || interaction.deferred) {
-			await interaction.followUo({ content: 'there was an error while executing this command...', ephemeral: true})
+			await interaction.followUp({ content: 'there was an error while executing this command...', ephemeral: true})
 		}
 		else {
 			await interaction.reply({content: 'there was an error while executing this command...', ephemeral: true})
@@ -65,6 +66,11 @@ client.on(Events.InteractionCreate, async interaction => {
 // It makes some properties non-nullable.
 client.once(Events.ClientReady, readyClient => {
 	console.log(`Ready! Logged in as ${readyClient.user.tag}`);
+});
+
+client.on('error', (error) => {
+	console.error('WebSocket error encountered:', error);
+	// Implement retry logic or other error handling here
 });
 
 // Log in to Discord with your client's token
