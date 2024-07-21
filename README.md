@@ -1,2 +1,2 @@
 # dandybot
-discord bot that makes deez nuts jokes and generally inconveniences people
+community management bot created with node.js and designed by DANDYCORP LLC.
